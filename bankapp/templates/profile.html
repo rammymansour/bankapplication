@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+  <section>
+    <h1>Welcome {{ person.firstname }}</h1>
+    <h2>Accounts</h2>
+    <ul>
+      {% for account in person.accounts %}
+        <li>
+          {{ account.id }} Holding: {{ account.holding }}
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endblock %}
