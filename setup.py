@@ -8,7 +8,8 @@ setup(
         'mongoengine',
         'flask',
         'pymongo',
-        'bson'
+        'bson',
+        'wtforms'
     ],
     packages=find_packages(),
     entry_points={

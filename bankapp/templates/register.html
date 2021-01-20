@@ -1,24 +1,26 @@
 {% extends 'base.html' %}
+{% from '_formhelpers.html' import render_field %}
 
 
 {% block body %}
-  <form method="POST">
-    <label for="email">
-      <b>Email</b>
-      <input type="email" id="email" name='email'/>
-    </label>
-    <label for="firstname">
-      <b>Name</b>
-      <input type="text" id="firstname" name='firstname'/>
-    </label>
-    <label for="lastname">
-      <b>Lastname</b>
-      <input type="text" id="lastname" name='lastname'/>
-    </label>
-    <label for="password">
-      <b>Password</b>
-      <input type="password" id="password" name='password'/>
-    </label>
-    <input type='submit' value='Register'/>
-  </form>
+  <div class='hero is-fullheight is-centered is-vcentered columns'>
+    <h1 class="title is-3">Register</h1>
+    <div class='column center is-three-quarters-mobile is-two-thirds-tablet is-one-third-desktop'>
+      <div class='card'>
+        <div class='card-content'>
+          <form method="POST">
+            {{ render_field(form.email) }}
+            {{ render_field(form.firstname) }}
+            {{ render_field(form.lastname) }}
+            {{ render_field(form.password) }}
+            <div class="field is-grouped">
+              <div class="control">
+                <input type='submit' class="button is-link" value='Register'>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

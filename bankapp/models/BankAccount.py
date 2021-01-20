@@ -1,5 +1,9 @@
 from mongoengine import *
 
 
+DEFAULT_ACCOUNT_NAME = 'Primary'
+
+
 class BankAccount(Document):
-    holding = IntField(default=5000)
+    name = StringField(default=DEFAULT_ACCOUNT_NAME)
+    holding = IntField(default=0)
